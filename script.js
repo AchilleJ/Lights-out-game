@@ -1,18 +1,20 @@
 
-function lightOn (){
-
-}
-
-function test (){
-	console.log(1);
-}
 
 for (var i = 0; i <= 25; i++) {
-	document.getElementById("case"+i);
+	document.getElementById("Box"+i);
 
 }
 
 
-document.getElementById("case1").onclick = function(){
-	document.getElementById("case2").style.backgroundColor="blue";
-}
+function light(nBox){
+    var color = nBox.style.backgroundColor;
+    if (color == ''){
+   		color = 'white';	
+    }
+    if (color === 'white'){
+    	nBox.style.backgroundColor = 'black';
+    }
+    else{
+    	nBox.style.backgroundColor = 'white';
+    }
+};
