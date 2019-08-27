@@ -3,7 +3,9 @@
 
 
 function level1(){
-
+	document.getElementById(11).style.backgroundColor = 'yellow';
+	document.getElementById(13).style.backgroundColor = 'yellow';
+	document.getElementById(15).style.backgroundColor = 'yellow';
 }
 
 function resetall(){
@@ -29,19 +31,25 @@ function reverseColor(nBox){
 	var bot_id = parseInt(BoxNum)+5;
 	var left_id = BoxNum-1;
 
-	console.log(top_id,right_id,bot_id,left_id);
+	if (top_id <= 25 && top_id > 0) {
+		var top_color = document.getElementById(top_id).style.backgroundColor;
+		directionalColorCondition(top_color,top_id);
+	}
 
-	var top_color = document.getElementById(top_id).style.backgroundColor;
-	directionalColorCondition(top_color,top_id);
+	if (right_id <= 25 && right_id > 0 && (right_id != 6 && right_id != 11 && right_id != 16 && right_id != 21)) {
+		var right_color = document.getElementById(right_id).style.backgroundColor;
+		directionalColorCondition(right_color,right_id);
+	}
 
-	var right_color = document.getElementById(right_id).style.backgroundColor;
-	directionalColorCondition(right_color,right_id);
+	if (bot_id <= 25 && bot_id > 0){
+		var bot_color = document.getElementById(bot_id).style.backgroundColor;
+		directionalColorCondition(bot_color,bot_id);
+	}
 
-	var bot_color = document.getElementById(bot_id).style.backgroundColor;
-	directionalColorCondition(bot_color,bot_id);
-
-	var left_color = document.getElementById(left_id).style.backgroundColor;
-	directionalColorCondition(left_color,left_id);
+	if (left_id <= 25 && left_id > 0 && (left_id != 5 && left_id != 10 && left_id != 15 && left_id != 20)) {
+		var left_color = document.getElementById(left_id).style.backgroundColor;
+		directionalColorCondition(left_color,left_id);
+	}
 
 }
 
@@ -58,3 +66,4 @@ function clickLight(box){
 }
 
 resetall();
+level1()
