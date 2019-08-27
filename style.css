@@ -1,14 +1,13 @@
-element{
-	background-color: white;
-}
+
 
 table{
 	margin: auto;
+	border-collapse: collapse;
 }
 
 td {
 	border: 1px solid black;
-	width: 130px;
-	height: 130px;
+	width: 100px;
+	height: 100px;
 	background-color: white;
 }
