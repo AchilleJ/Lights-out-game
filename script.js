@@ -14,13 +14,25 @@ function resetall(){
 	}
 }
 
+function win (){
+	for (var i = 1; i <= 25; i++){
+		if (document.getElementById(i).style.backgroundColor != 'white') {
+			return false;
+		}
+	}
+	alert("Bravo !\nNombre de coups: " + compteur);
+	resetall()
+	level1()
+
+}
+
 
 function directionalColorCondition(direction_color,direction_id){
 	if (direction_color == 'white') {
-		document.getElementById(direction_id).style.backgroundColor = 'yellow'
+		document.getElementById(direction_id).style.backgroundColor = 'yellow';
 	}
 	else{
-		document.getElementById(direction_id).style.backgroundColor = 'white'
+		document.getElementById(direction_id).style.backgroundColor = 'white';
 	}
 }
 
@@ -51,9 +63,13 @@ function reverseColor(nBox){
 		directionalColorCondition(left_color,left_id);
 	}
 
+	win ()
 }
 
 function clickLight(box){
+	compteur ++;
+    document.getElementById("nb").innerHTML = "&nbsp;" + compteur;
+
     var color = box.style.backgroundColor;
 
     if (color === 'white'){
@@ -65,5 +81,6 @@ function clickLight(box){
     reverseColor(box,color);
 }
 
+var compteur = 0
 resetall();
 level1()
