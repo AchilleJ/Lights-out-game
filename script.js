@@ -3,6 +3,7 @@
 
 
 function level1(){
+	resetall();
 	document.getElementById(11).style.backgroundColor = 'yellow';
 	document.getElementById(13).style.backgroundColor = 'yellow';
 	document.getElementById(15).style.backgroundColor = 'yellow';
@@ -21,8 +22,9 @@ function win (){
 		}
 	}
 	alert("Bravo !\nNombre de coups: " + compteur);
-	resetall()
-	level1()
+	compteur = 0;
+	document.getElementById("nb").innerHTML = "&nbsp;" + compteur;
+	level1();
 
 }
 
@@ -81,6 +83,5 @@ function clickLight(box){
     reverseColor(box,color);
 }
 
-var compteur = 0
-resetall();
+var compteur = 0;
 level1()
